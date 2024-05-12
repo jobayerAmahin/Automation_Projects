@@ -17,11 +17,29 @@ Validate an invalid email address
 Validate the password following password complexity
     launchBrowser
     set browser implicit wait    5s
-    input text    id:email    jam@gmail.com
+    input text    id:email    jks1@gmail.com
     click button    xpath://button[@id="ActionButton_0"]
     click element    xpath://input[@id="password"]
     input text    id:password       Hfss6%6#
-
+Validate the password not following password complexity
+    launchBrowser
+    set browser implicit wait    5s
+    input text    id:email    jks2@gmail.com
+    click button    xpath://button[@id="ActionButton_0"]
+    click element    xpath://input[@id="password"]
+    input text    id:password       Hfss66
+Validate the password not following password complexity(valid number of digit but only one type of character)
+    launchBrowser
+    set browser implicit wait    5s
+    input text    id:email    jks1@gmail.com
+    click button    xpath://button[@id="ActionButton_0"]
+    click element    xpath://input[@id="password"]
+    input text    id:password       HfsskkNN
+    clear element text    id:password
+    input text    id:password       22339988
+    clear element text    id:password
+    input text    id:password       "#¤%&//)
+    clear element text    id:password
 *** Keywords ***
 launchBrowser
     open browser    ${url}      ${browser}
