@@ -40,6 +40,13 @@ Validate the password not following password complexity(valid number of digit bu
     clear element text    id:password
     input text    id:password       "#¤%&//)
     clear element text    id:password
+Validate Create a password field with invalid format(accurate number but mixed by only two types of characters)
+    launchBrowser
+    set browser implicit wait    5s
+    input text    id:email    jks1@gmail.com
+    click button    xpath://button[@id="ActionButton_0"]
+    click element    xpath://input[@id="password"]
+    input text    id:password       hfss2223
 *** Keywords ***
 launchBrowser
     open browser    ${url}      ${browser}
