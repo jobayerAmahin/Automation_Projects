@@ -31,7 +31,7 @@ Validate the password not following password complexity
 Validate the password not following password complexity(valid number of digit but only one type of character)
     launchBrowser
     set browser implicit wait    5s
-    input text    id:email    jks1@gmail.com
+    input text    id:email    jks3@gmail.com
     click button    xpath://button[@id="ActionButton_0"]
     click element    xpath://input[@id="password"]
     input text    id:password       HfsskkNN
@@ -43,10 +43,19 @@ Validate the password not following password complexity(valid number of digit bu
 Validate Create a password field with invalid format(accurate number but mixed by only two types of characters)
     launchBrowser
     set browser implicit wait    5s
-    input text    id:email    jks1@gmail.com
+    input text    id:email    jks4@gmail.com
     click button    xpath://button[@id="ActionButton_0"]
     click element    xpath://input[@id="password"]
     input text    id:password       hfss2223
+Validate Create a password field with invalid format(accurate number and mixed up by all characters but only in uppercase or lowercase)
+    launchBrowser
+    set browser implicit wait    5s
+    input text    id:email    jks5@gmail.com
+    click button    xpath://button[@id="ActionButton_0"]
+    click element    xpath://input[@id="password"]
+    input text    id:password       HF23*#6%
+    click element    xpath://input[@id="password"]
+    input text    id:password       hf23*#6%
 *** Keywords ***
 launchBrowser
     open browser    ${url}      ${browser}
