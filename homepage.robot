@@ -56,6 +56,14 @@ Validate Create a password field with invalid format(accurate number and mixed u
     input text    id:password       HF23*#6%
     click element    xpath://input[@id="password"]
     input text    id:password       hf23*#6%
+Validate the blank password field (Typing and removing characters password field)
+    launchBrowser
+    set browser implicit wait    5s
+    input text    id:email    jks6@gmail.com
+    click button    xpath://button[@id="ActionButton_0"]
+    click element    xpath://input[@id="password"]
+    input text    id:password       HF23*#6%
+    clear element text    xpath://input[@id="password"]
 *** Keywords ***
 launchBrowser
     open browser    ${url}      ${browser}
