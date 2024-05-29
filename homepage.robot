@@ -64,6 +64,14 @@ Validate the blank password field (Typing and removing characters password field
     click element    xpath://input[@id="password"]
     input text    id:password       HF23*#6%
     clear element text    xpath://input[@id="password"]
+Validate the Terms and Condition confirmation button(Not Accepting)
+    launchBrowser
+    set browser implicit wait    5s
+    input text    id:email    jks8@gmail.com
+    click button    xpath://button[@id="ActionButton_0"]
+    click element    xpath://input[@id="password"]
+    input text    id:password       Hfss6%6#
+    click element    xpath://button[@id="ActionButton_0"]
 *** Keywords ***
 launchBrowser
     open browser    ${url}      ${browser}
